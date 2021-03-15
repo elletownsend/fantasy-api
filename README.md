@@ -20,8 +20,17 @@ Node JS & Express API project.
 - `http://localhost:3000/api/v1/characters/star-wars/:id` -> Get Star Wars Character by Id
 - `http://localhost:3000/api/v1/characters/star-wars?q=<search_term>` -> Search for a Star Wars Character by name
 
-Coming soon: Lord of the rings!
-
 ### Scripts
 
 - `npm start` -> Run development server with hot reloading.
+- `npm test` -> Runs tests (currently 6/6 passing)
+
+### Tech stack
+
+- Node.js
+- Express
+- Morgan (logger middleware)
+- JSON (for data)
+- Testing with Mocha, Chai and Chai-http
+
+Coming soon: Lord of the rings!
