@@ -22,7 +22,7 @@ Node JS & Express API project.
 
 ### Scripts
 
-- `npm start` -> Run development server with hot reloading.
+- `npm start` -> Run development server with hot reloading (using nodemon)
 - `npm test` -> Runs tests (currently 6/6 passing)
 
 ### Tech stack
@@ -33,4 +33,13 @@ Node JS & Express API project.
 - JSON (for data)
 - Testing with Mocha, Chai and Chai-http
 
-Coming soon: Lord of the rings!
+To Do:
+
+- Lord of the rings!
+- Improved filtering & Searching
+
+### Credits
+
+Harry Potter Data - [Gulsah Demiryurek](https://www.kaggle.com/gulsahdemiryurek/harry-potter-dataset)
+Star Wars Data - [Joe Young](https://www.kaggle.com/jsphyg/star-wars)
+Lord of The Rings Data - [Paul Mooney](https://www.kaggle.com/paultimothymooney/lord-of-the-rings-data)
