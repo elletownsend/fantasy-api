@@ -6,7 +6,6 @@ const characterRouter = require('./routes/characterRoutes');
 const movieRouter = require('./routes/movieRoutes');
 
 const app = express();
-app.use(morgan('dev'));
 
 app.use(express.json());
 
