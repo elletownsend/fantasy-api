@@ -1,6 +1,5 @@
 const fs = require('fs');
 const express = require('express');
-const morgan = require('morgan');
 
 const characterRouter = require('./routes/characterRoutes');
 const movieRouter = require('./routes/movieRoutes');
