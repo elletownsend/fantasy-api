@@ -3,19 +3,29 @@ body {
   width: min(70ch, 80%);
   margin: 0 auto;
   padding: 100px 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
   text-align: justify;
 }
+
 hr {
   padding-bottom: 15px;
   border: none;
   color: #222;
   text-align: center;
 }
+
 hr:after {
   content: '✧･ﾟ: *✧･ﾟ:*';
   position: relative;
   font-size: 20px;
 }
+
 li {
   margin-top: 5px;
 }
