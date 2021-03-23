@@ -4,7 +4,7 @@
   "description": "Fanstasy Data API (Films & Books)",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "test": "mocha"
   },
   "repository": {
