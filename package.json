@@ -1,7 +1,7 @@
 {
   "name": "fantasy-api",
   "version": "1.0.0",
-  "description": "Fanstasy Data API (Films & Books)",
+  "description": "Fantasy Data API (Films & Books)",
   "main": "app.js",
   "scripts": {
     "start": "node server.js",

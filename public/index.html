@@ -5,73 +5,131 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="favicon.ico?v=2" />
     <title>The Fantasy API</title>
   </head>
   <body>
-    <h1>The Fantasy API</h1>
-    <hr />
-    <p>
-      This API currently serves data on Harry Potter & Star Wars characters and
-      movies. Harry Potter Data from
-      <a href="https://www.kaggle.com/gulsahdemiryurek/harry-potter-dataset"
-        >Gulsah Demiryurek</a
-      >
-      on kaggle, Star Wars Data from
-      <a href="https://www.kaggle.com/jsphyg/star-wars">Joe Young</a> on kaggle.
-    </p>
-    <hr />
-    <h2>Routes & Resources</h2>
-    <ul>
-      <li>Base Url: <code>https://the-fantasy-api.herokuapp.com</code></li>
-      <li>
-        <code>/api/v1/movies/harry-potter/</code> - Get All Harry Potter Movies
-      </li>
-      <li>
-        <code>/api/v1/movies/harry-potter/:id</code> - Get Harry Potter Movie by
-        Id
-      </li>
-      <li>
-        <code>/api/v1/movies/harry-potter?q=search_term</code> - Search for a
-        Harry Potter Movie by title
-      </li>
+    <header>
+      <h1>The Fantasy API</h1>
+      <hr />
+      <p>
+        This API currently serves data on Harry Potter & Star Wars characters
+        and movies. Harry Potter Data from
+        <a href="https://www.kaggle.com/gulsahdemiryurek/harry-potter-dataset"
+          >Gulsah Demiryurek</a
+        >
+        on Kaggle, Star Wars Data from
+        <a href="https://www.kaggle.com/jsphyg/star-wars">Joe Young</a> on
+        Kaggle.
+      </p>
+    </header>
+
+    <main>
+      <hr />
+      <h2>Getting Started</h2>
+      <p>
+        This API is free to use, and no API key is required. Please be
+        reasonable with your usage :)
+      </p>
+      <p>
+        All example code is written in JavaScript using the Axios HTTP client
+        package.
+      </p>
       <br />
-      <li>
-        <code>/api/v1/characters/harry-potter/</code> - Get All Harry Potter
-        Characters
-      </li>
-      <li>
-        <code>/api/v1/characters/harry-potter/:id</code> - Get Harry Potter
-        Character by Id
-      </li>
-      <li>
-        <code>/api/v1/characters/harry-potter?q=search_term</code> - Search for
-        a Harry Potter Character by name
-      </li>
+
+      <h2>Routes & Resources</h2>
+      <h3>Movies</h3>
+      <p>
+        The 'Movies' resource provides data on each movie related to the
+        specified franchise. Data for specific movies can also be accessed by
+        either specifying the movie's id or adding search parameters to your
+        request (searching the movie by title).
+        <br />
+        Includes data on: title, overview and release_date.
+      </p>
+      <h4>Harry Potter</h4>
+      <p>
+        This resource includes all data for the main 8 Harry Potter movies. Ids
+        start at 1 [Philosopher's Stone] and end at 8 [The Deathly Hallows: Part
+        2].
+      </p>
+      <script src="https://gist.github.com/elletownsend/fc6fa2cd921a1010cf70c03b1f28bce3.js"></script>
+      <h4>Star Wars</h4>
+      <p>
+        This resource includes all data for the main 9 Star Wars movies, as well
+        as Solo and Rogue One. Ids start at 15 [A New Hope], and end at 25
+        [Solo].
+      </p>
+      <script src="https://gist.github.com/elletownsend/f29650c77325d4fe3b926e62b8f31add.js"></script>
       <br />
-      <li>
-        <code>/api/v1/api/v1/movies/star-wars/</code> - Get All Star Wars Movies
-      </li>
-      <li>
-        <code>/api/v1/api/v1/movies/star-wars/:id</code> - Get Star Wars Movie
-        by Id
-      </li>
-      <li>
-        <code>/api/v1/api/v1/movies/star-wars?q=search_term</code> - Search for
-        a Star Wars Movie by title
-      </li>
+      <h3>Characters</h3>
+      <p>
+        The 'Characters' resource provides data on *almost all* characters
+        related to the specified franchise. Data for specific characters can
+        also be accessed by either specifying the character's id or adding
+        search parameters to your request (searching a character by name).
+      </p>
+      <h4>Harry Potter</h4>
+      <p>
+        This resource includes all data for ~140 Harry Potter characters. Ids
+        start at 1 [Harry James Potter], and end at 140 [Kreacher].
+      </p>
+      <p>Includes data on:</p>
+      <ul>
+        <li>name</li>
+        <li>gender</li>
+        <li>job</li>
+        <li>house</li>
+        <li>wand</li>
+        <li>patronus</li>
+        <li>species</li>
+        <li>blood_status</li>
+        <li>hair_colour</li>
+        <li>eye_colour</li>
+        <li>loyalty</li>
+        <li>skills</li>
+        <li>birth_year</li>
+        <li>death_year</li>
+      </ul>
+      <script src="https://gist.github.com/elletownsend/abdc37523d29563a7bd695516b8867d4.js"></script>
+      <h4>Star Wars</h4>
+      <p>
+        This resource includes all data for ~86 Star Wars characters. Ids start
+        at 201 [Luke Skywalker], and end at 287 [Padmé Amidala].
+      </p>
+      <p>Includes data on:</p>
+      <ul>
+        <li>name</li>
+        <li>height</li>
+        <li>mass</li>
+        <li>hair_colour</li>
+        <li>skin_colour</li>
+        <li>eye_colour</li>
+        <li>birth_year</li>
+        <li>gender</li>
+        <li>homeworld</li>
+        <li>species</li>
+      </ul>
+
+      <script src="https://gist.github.com/elletownsend/a84c3b17b268bb1325c5856f99f54a3f.js"></script>
+
       <br />
-      <li>
-        <code>/api/v1/api/v1/characters/star-wars/</code> - Get All Star Wars
-        Characters
-      </li>
-      <li>
-        <code>/api/v1/api/v1/characters/star-wars/:id</code> - Get Star Wars
-        Character by Id
-      </li>
-      <li>
-        <code>/api/v1/api/v1/characters/star-wars?q=search_term</code> - Search
-        for a Star Wars Character by name
-      </li>
-    </ul>
+      <h2>Contribution & Source Code</h2>
+      <p>
+        The source code for this project can be found at
+        <a href="https://github.com/elletownsend/fantasy-api"
+          >https://github.com/elletownsend/fantasy-api</a
+        >. If you'd like to contribute to this project, fork/clone the repo for
+        or open an issue on Github.
+      </p>
+      <hr />
+    </main>
+
+    <footer>
+      <p>
+        Project created by
+        <a href="https://twitter.com/_elletownsend">Elle Townsend</a>
+      </p>
+    </footer>
   </body>
 </html>

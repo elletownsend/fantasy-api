@@ -14,7 +14,8 @@ p {
 }
 
 hr {
-  padding-bottom: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border: none;
   color: #222;
   text-align: center;
