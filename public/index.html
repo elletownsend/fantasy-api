@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>The Fantasy API</title>
+  </head>
+  <body>
+    <h1>The Fantasy API</h1>
+    <hr />
+    <p>
+      This API currently serves data on Harry Potter & Star Wars characters and
+      movies. Harry Potter Data from
+      <a href="https://www.kaggle.com/gulsahdemiryurek/harry-potter-dataset"
+        >Gulsah Demiryurek</a
+      >
+      on kaggle, Star Wars Data from
+      <a href="https://www.kaggle.com/jsphyg/star-wars">Joe Young</a> on kaggle.
+    </p>
+    <hr />
+    <h2>Routes & Resources</h2>
+    <ul>
+      <li>Base Url: <code>https://the-fantasy-api.herokuapp.com</code></li>
+      <li>
+        <code>/api/v1/movies/harry-potter/</code> - Get All Harry Potter Movies
+      </li>
+      <li>
+        <code>/api/v1/movies/harry-potter/:id</code> - Get Harry Potter Movie by
+        Id
+      </li>
+      <li>
+        <code>/api/v1/movies/harry-potter?q=search_term</code> - Search for a
+        Harry Potter Movie by title
+      </li>
+      <br />
+      <li>
+        <code>/api/v1/characters/harry-potter/</code> - Get All Harry Potter
+        Characters
+      </li>
+      <li>
+        <code>/api/v1/characters/harry-potter/:id</code> - Get Harry Potter
+        Character by Id
+      </li>
+      <li>
+        <code>/api/v1/characters/harry-potter?q=search_term</code> - Search for
+        a Harry Potter Character by name
+      </li>
+      <br />
+      <li>
+        <code>/api/v1/api/v1/movies/star-wars/</code> - Get All Star Wars Movies
+      </li>
+      <li>
+        <code>/api/v1/api/v1/movies/star-wars/:id</code> - Get Star Wars Movie
+        by Id
+      </li>
+      <li>
+        <code>/api/v1/api/v1/movies/star-wars?q=search_term</code> - Search for
+        a Star Wars Movie by title
+      </li>
+      <br />
+      <li>
+        <code>/api/v1/api/v1/characters/star-wars/</code> - Get All Star Wars
+        Characters
+      </li>
+      <li>
+        <code>/api/v1/api/v1/characters/star-wars/:id</code> - Get Star Wars
+        Character by Id
+      </li>
+      <li>
+        <code>/api/v1/api/v1/characters/star-wars?q=search_term</code> - Search
+        for a Star Wars Character by name
+      </li>
+    </ul>
+  </body>
+</html>

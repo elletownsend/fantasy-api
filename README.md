@@ -14,7 +14,7 @@ Node JS & Express API project.
 
 - `http://localhost:3000/api/v1/movies/star-wars/` -> Get All Star Wars Movies
 - `http://localhost:3000/api/v1/movies/star-wars/:id` -> Get Star Wars Movie by Id
-- `http://localhost:3000/api/v1/movies/harry-potter?q=<search_term>` -> Search for a Star Wars Movie by title
+- `http://localhost:3000/api/v1/movies/star-wars?q=<search_term>` -> Search for a Star Wars Movie by title
 
 - `http://localhost:3000/api/v1/characters/star-wars/` -> Get All Star Wars Characters
 - `http://localhost:3000/api/v1/characters/star-wars/:id` -> Get Star Wars Character by Id
