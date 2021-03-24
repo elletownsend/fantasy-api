@@ -108,6 +108,57 @@ describe('Characters', () => {
       });
     });
   });
+
+  describe('LOTR Resources', () => {
+    describe('GET characters/lotr/', () => {
+      it('GET all LOTR characters in the data', (done) => {
+        chai
+          .request(app)
+          .get('/api/v1/characters/lotr/')
+          .end((err, res) => {
+            assert.equal(res.statusCode, 200);
+            assert.equal(res.body.status, 'success');
+            assert.equal(res.body.results, 911);
+            assert.typeOf(res.body.data.results, 'array');
+            assert.equal(res.body.data.results[0].id, 300);
+            assert.equal(res.body.results, res.body.data.results.length);
+            done();
+          });
+      });
+    });
+
+    describe('GET characters/lotr/:id', () => {
+      it('GET specific LOTR character in the data by id', (done) => {
+        chai
+          .request(app)
+          .get('/api/v1/characters/lotr/1119')
+          .end((err, res) => {
+            assert.equal(res.statusCode, 200);
+            assert.equal(res.body.status, 'success');
+            assert.typeOf(res.body.data, 'Object');
+            assert.equal(res.body.data.character.id, 1119);
+            done();
+          });
+      });
+    });
+
+    describe('GET characters/lotr?p=', () => {
+      it('GET LOTR character by search', (done) => {
+        chai
+          .request(app)
+          .get('/api/v1/characters/lotr?q=Frodo Baggins')
+          .end((err, res) => {
+            assert.equal(res.statusCode, 200);
+            assert.equal(res.body.status, 'success');
+            assert.typeOf(res.body.data.results, 'array');
+            assert.equal(res.body.results, 1);
+            assert.equal(res.body.results, res.body.data.results.length);
+            assert.include(res.body.data.results[0].name, 'Frodo Baggins');
+            done();
+          });
+      });
+    });
+  });
 });
 
 describe('Characters Errors', () => {
@@ -155,6 +206,32 @@ describe('Characters Errors', () => {
       chai
         .request(app)
         .get('/api/v1/characters/star-wars?q=Remus')
+        .end((err, res) => {
+          assert.equal(res.statusCode, 404);
+          assert.equal(res.body.status, 'failed');
+          done();
+        });
+    });
+  });
+
+  describe('GET characters/lotr/:id', () => {
+    it('GET LOTR character id out of range', (done) => {
+      chai
+        .request(app)
+        .get('/api/v1/characters/lotr/0')
+        .end((err, res) => {
+          assert.equal(res.statusCode, 404);
+          assert.equal(res.body.status, 'failed');
+          done();
+        });
+    });
+  });
+
+  describe('GET characters/lotr?p=', () => {
+    it('GET Star Wars character search criteria not met', (done) => {
+      chai
+        .request(app)
+        .get('/api/v1/characters/lotr?q=Remus')
         .end((err, res) => {
           assert.equal(res.statusCode, 404);
           assert.equal(res.body.status, 'failed');
