@@ -108,6 +108,57 @@ describe('Movies', () => {
       });
     });
   });
+
+  describe('LOTR Movies Resources', () => {
+    describe('GET movies/lotr/', () => {
+      it('GET all LOTR movies in the data', (done) => {
+        chai
+          .request(app)
+          .get('/api/v1/movies/lotr/')
+          .end((err, res) => {
+            assert.equal(res.statusCode, 200);
+            assert.equal(res.body.status, 'success');
+            assert.equal(res.body.results, 6);
+            assert.typeOf(res.body.data.results, 'array');
+            assert.equal(res.body.data.results[0].id, 9);
+            assert.equal(res.body.results, res.body.data.results.length);
+            done();
+          });
+      });
+    });
+
+    describe('GET movies/lotr/:id', () => {
+      it('GET specific LOTR movie in the data by id', (done) => {
+        chai
+          .request(app)
+          .get('/api/v1/movies/lotr/11')
+          .end((err, res) => {
+            assert.equal(res.statusCode, 200);
+            assert.equal(res.body.status, 'success');
+            assert.typeOf(res.body.data, 'Object');
+            assert.equal(res.body.data.movie.id, 11);
+            done();
+          });
+      });
+    });
+
+    describe('GET movies/lotr?q', () => {
+      it('GET LOTR movie by search', (done) => {
+        chai
+          .request(app)
+          .get('/api/v1/movies/lotr?q=Fellowship')
+          .end((err, res) => {
+            assert.equal(res.statusCode, 200);
+            assert.equal(res.body.status, 'success');
+            assert.equal(res.body.results, 1);
+            assert.typeOf(res.body.data.results, 'array');
+            assert.equal(res.body.results, res.body.data.results.length);
+            assert.include(res.body.data.results[0].title, 'Fellowship');
+            done();
+          });
+      });
+    });
+  });
 });
 
 describe('Movies Errors', () => {
@@ -155,6 +206,32 @@ describe('Movies Errors', () => {
       chai
         .request(app)
         .get('/api/v1/movies/star-wars?q=Azkaban')
+        .end((err, res) => {
+          assert.equal(res.statusCode, 404);
+          assert.equal(res.body.status, 'failed');
+          done();
+        });
+    });
+  });
+
+  describe('GET movies/lotr/:id', () => {
+    it('GET LOTR movie id out of range', (done) => {
+      chai
+        .request(app)
+        .get('/api/v1/movies/lotr/0')
+        .end((err, res) => {
+          assert.equal(res.statusCode, 404);
+          assert.equal(res.body.status, 'failed');
+          done();
+        });
+    });
+  });
+
+  describe('GET movies/lotr?p=', () => {
+    it('GET LOTR movie search criteria not met', (done) => {
+      chai
+        .request(app)
+        .get('/api/v1/movies/lotr?q=Azkaban')
         .end((err, res) => {
           assert.equal(res.statusCode, 404);
           assert.equal(res.body.status, 'failed');
