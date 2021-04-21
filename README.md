@@ -35,6 +35,7 @@ Node JS & Express API project.
 
 To Do:
 
+- Improved API responses for usability
 - Lord of the rings!
 - Improved filtering & Searching
 
